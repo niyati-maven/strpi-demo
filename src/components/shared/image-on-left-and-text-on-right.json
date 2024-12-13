@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_image_on_left_and_text_on_rights",
+  "info": {
+    "displayName": "Image on Left and Text on Right",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "is_image_left": {
+      "type": "boolean"
+    },
+    "Desciption": {
+      "type": "richtext"
+    }
+  }
+}
