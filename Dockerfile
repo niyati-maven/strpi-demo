@@ -5,7 +5,7 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 # Install dependencies
 RUN npm install
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 1337
 
 # Start Strapi
-CMD ["npm", "run", "develop"]
+CMD ["node", "server.ts"]
