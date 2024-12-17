@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 1337
 
 # Start Strapi
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
