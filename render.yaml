@@ -1,26 +1,40 @@
+# Exported from Render on 2024-12-17T10:22:38Z
 services:
-  - type: web
-    name: strapi
-    env: node
-    plan: starter
-    buildCommand: yarn install && yarn build
-    startCommand: rsync -a public/ /data/public/ && yarn start
-    healthCheckPath: /_health
-    autoDeploy: false
-    disk:
-      name: strapi-data
-      mountPath: /data
-      sizeGB: 1
-    envVars:
-      - key: NODE_VERSION
-        value: ~20.18.1
-      - key: NODE_ENV
-        value: production
-      - key: DATABASE_FILENAME
-        value: /data/strapi.db
-      - key: JWT_SECRET
-        generateValue: true
-      - key: ADMIN_JWT_SECRET
-        generateValue: true
-      - key: APP_KEYS
-        generateValue: true
+- type: web
+  name: niyati-strpi-demo
+  runtime: docker
+  repo: https://github.com/niyati-maven/strpi-demo
+  plan: free
+  envVars:
+  - key: JWT_SECRET
+    sync: false
+  - key: DATABASE_SSL
+    sync: false
+  - key: DATABASE_PASSWORD
+    sync: false
+  - key: DATABASE_USERNAME
+    sync: false
+  - key: DATABASE_NAME
+    sync: false
+  - key: DATABASE_PORT
+    sync: false
+  - key: DATABASE_HOST
+    sync: false
+  - key: DATABASE_CLIENT
+    sync: false
+  - key: TRANSFER_TOKEN_SALT
+    sync: false
+  - key: ADMIN_JWT_SECRET
+    sync: false
+  - key: API_TOKEN_SALT
+    sync: false
+  - key: APP_KEYS
+    sync: false
+  - key: PORT
+    sync: false
+  - key: HOST
+    sync: false
+  region: oregon
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+version: "1"
