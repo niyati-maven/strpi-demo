@@ -4,7 +4,8 @@
   "info": {
     "singularName": "faq-category",
     "pluralName": "faq-categories",
-    "displayName": "FAQ Category"
+    "displayName": "FAQ Category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,10 @@
   "attributes": {
     "Name": {
       "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
     }
   }
 }

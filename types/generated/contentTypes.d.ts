@@ -541,6 +541,7 @@ export interface ApiDemoPageDemoPage extends Struct.SingleTypeSchema {
 export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
   collectionName: 'faq_categories';
   info: {
+    description: '';
     displayName: 'FAQ Category';
     pluralName: 'faq-categories';
     singularName: 'faq-category';
@@ -560,6 +561,7 @@ export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
